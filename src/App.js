@@ -1,25 +1,16 @@
-import React, {Component} from 'react';
-import {LabelsInput} from './LabelsInput';
+import React, { useState } from 'react';
+import Formulario from './Formulario';
 import './App.css';
 
-class App extends Component {
+const App = () => {
+  const [salarioDesejado] = useState(0);
 
-  constructor(props) {
-    super();
-
-    this.state = {
-      
-    }
-  }
-
-  render() {
-    return ( 
-      <div className="App">
-        <h1>Cálculo de salário com React</h1>
-        <LabelsInput />
-      </div>
-    );
-  }
+  return (
+    <div className="App-header">
+      <h1>Cálculo de salário com React</h1>
+      <Formulario salarioDesejado={salarioDesejado} />
+    </div>
+  );
 }
 
 export default App;

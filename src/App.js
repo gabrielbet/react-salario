@@ -1,14 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Formulario from './Formulario';
 import './App.css';
 
 const App = () => {
-  const [salarioDesejado] = useState(0);
-
   return (
     <div className="App-header">
       <h1>Cálculo de salário com React</h1>
-      <Formulario salarioDesejado={salarioDesejado} />
+      <Formulario />
     </div>
   );
 }

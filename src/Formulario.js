@@ -1,11 +1,23 @@
 import React, { useState } from 'react';
 
+const salarioBruto = ({props}) => {
+    
+}
+
+const DescontoINSS = ({props}) => {
+    return props - 100
+}
+
 const SalarioBruto = () => {
     return(
         <form>
             <label>
                 Salário bruto:
-                <input type="number" name="salarioBruto" />
+                <input
+                type="number"
+                name="salarioBruto"
+                onChange={salarioBruto}
+                />
             </label>
         </form>
     )            
@@ -16,11 +28,11 @@ const INSS = (salarioBruto) => {
         <form>
             <label>
                 Base INSS:
-                <input disabled type="number" name="baseInss" />
+                <input disabled type="number" name="baseInss" value={salarioBruto}/>
             </label>
             <label>
                 Desconto INSS:
-                <input disabled type="number" name="descInss" />
+                <input disabled type="number" name="descInss" value={DescontoINSS}/>
             </label>
         </form>
     )            

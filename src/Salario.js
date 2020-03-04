@@ -72,6 +72,16 @@ export class Salario {
     /**
      * Regras de validação
      */
+
+    if (typeof pSalarioBruto === 'string') {
+      pSalarioBruto = Number(pSalarioBruto);
+    }
+
+    if (typeof pSalarioBruto === 'number' && pSalarioBruto < 0) {
+      pSalarioBruto = 0;
+    }
+    
+    
     if (pSalarioBruto === undefined || typeof pSalarioBruto !== 'number' || pSalarioBruto < 0) {
       throw new Error(
         'O parâmetro do salário bruto ' +
